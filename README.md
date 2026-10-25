@@ -1,26 +1,30 @@
 # Design Intelligence
 
-**Universal AI Design Director** for Codex/Claude/Figma. It combines product strategy, UX research, marketplace expertise, visual direction, motion, and repeatable design review. Fresska is the first, deeply documented project profile; the skill itself works for other product archetypes.
+Universal AI Design Director for digital products. Combines product strategy, UX research, competitive benchmarking, visual identity exploration, motion design, critical evaluation and editable Figma work. **No brand or product assumptions are baked into the main skill.**
 
 ## Installation
-Codex: clone the repository to `~/.agents/skills/design-intelligence/` so that the `SKILL.md` file sits at that root path. Claude Code: use `~/.claude/skills/design-intelligence/` or a project's `.claude/skills/design-intelligence/`. Install and authorize Figma MCP separately; skill instructions do not install or authorize integrations.
+For Codex: clone to `~/.agents/skills/design-intelligence/`, with `SKILL.md` at its root. For Claude Code: use `~/.claude/skills/design-intelligence/` or `.claude/skills/design-intelligence/` within a project. Figma MCP must be separately connected and authorized.
 
 ## Modes
-- `design-intelligence audit` — read-only UX/UI review.
-- `design-intelligence benchmark` — real examples and evidence.
-- `design-intelligence journey` — task-based journey analysis.
-- `design-intelligence explore` — three distinct visual concepts.
-- `design-intelligence redesign` — editable Figma variants alongside originals.
-- `design-intelligence motion` — functional and brand motion specs.
+- Audit an existing design (read-only)
+- Research competing products and UX patterns
+- Map user journeys
+- Explore three distinct creative concepts
+- Redesign with editable native Figma layers
+- Specify functional and expressive motion
+- Validate outcomes and risks
 
-## Example
-> Используй design-intelligence. Проведи UX/UI-аудит главной Fresska в Figma. Проверь поиск, навигацию, пользовательские задачи, визуальную концепцию, брендинг, доступность и мобильный опыт. Изучи реальные паттерны, найди три оригинальных направления и объясни риски. Сначала сделай read-only аудит; не изменяй исходный макет.
+## Start
+> Используй skill design-intelligence. Проанализируй текущий макет в Figma: пользовательские цели, UX, визуальную иерархию, доступность, узнаваемость и креативные возможности. Проведи исследования доступных источников, предложи три разные концепции. Сначала только аудит, исходный макет не меняй.
+
+## Modular structure
+`SKILL.md` universal orchestrator, `agents/` expert procedures, `references/` methods and research sources, `workflows/` full process, `templates/` output formats, `projects/` optional isolated briefs, `examples/` generic prompts.
+
+## Optional projects
+Project-specific preferences and non-negotiables belong **only** in `projects/<project-name>.md`. A profile is loaded when that project is explicitly in scope; it must not affect other tasks. A project profile for Fresska is included as one optional example, not as a skill dependency.
 
 ## Mobbin
-Mobbin is **optional**. Its API/MCP may require authorization or paid access. The skill can inspect legitimately available screens, flows and website sections and collect canonical links. Without access it falls back to openly viewable examples and actual competitor sites; it never pretends to have inspected private content.
+Mobbin is optional. Use it only with authorized access or openly available pages. No subscription is required to use the core skill, though private Mobbin MCP content can require a paid account. Alternatives include actual accessible product sites and public UX sources.
 
-## Repository structure
-`SKILL.md` orchestrator; `agents/` expert procedures; `references/` evaluation and source rules; `workflows/` orchestration; `projects/fresska.md` product brief; `templates/` output schemas; `examples/` example execution.
-
-## Boundaries
-This is a collection of procedures, not a standalone Figma plugin or guarantee of hands-free quality. Research and design output should be validated with real users and connected tools where available.
+## Limitations
+This repository contains agent guidance, not a standalone GUI plugin. To actually modify Figma, connect the Figma integration. Research findings are not substitutes for user testing; make evidence and assumptions visible.

@@ -11,7 +11,50 @@
 - Для реального изменения макетов — отдельно подключённый и авторизованный **Figma MCP**. Skill сам по себе не создаёт Figma-подключение.
 - Mobbin необязателен: используются доступные публичные материалы и/или авторизованное подключение, когда оно разрешено тарифом.
 
-## Установка в Codex Desktop / Codex CLI
+## Быстрая установка через npx (рекомендуется)
+
+Требуется **Node.js 22.20+** (проверьте `node -v`). Отдельно устанавливать CLI не нужно: `npx` запускает официальный пакет `skills`.
+
+### Codex Desktop / Codex CLI — глобально
+
+```bash
+npx skills add Vlvdislav/design-intelligence --skill design-intelligence -g -a codex -y
+```
+
+### Claude Code — глобально
+
+```bash
+npx skills add Vlvdislav/design-intelligence --skill design-intelligence -g -a claude-code -y
+```
+
+### Codex и Claude Code одновременно — глобально
+
+```bash
+npx skills add Vlvdislav/design-intelligence --skill design-intelligence -g -a codex -a claude-code -y
+```
+
+### Только для текущего проекта
+
+Выполни команду из папки нужного проекта (без `-g`):
+
+```bash
+npx skills add Vlvdislav/design-intelligence --skill design-intelligence -a codex -a claude-code -y
+```
+
+### Проверка и обновление
+
+```bash
+npx skills add Vlvdislav/design-intelligence --list
+npx skills ls -g
+npx skills check
+npx skills update -g
+```
+
+**Примечание:** `-g` означает доступность во всех проектах, `-a` выбирает AI-агента, `--skill` выбирает конкретный навык из репозитория, `-y` убирает интерактивные вопросы. Команды одинаковы для Windows PowerShell, macOS и Linux при установленном Node.js.
+
+Справка: [Vercel skills CLI](https://github.com/vercel-labs/skills).
+
+## Альтернативная ручная установка через Git — Codex Desktop / Codex CLI
 
 Codex читает пользовательские skills из `~/.agents/skills/`. Установленный здесь skill доступен во всех проектах.
 
@@ -56,7 +99,7 @@ git clone https://github.com/Vlvdislav/design-intelligence.git .agents/skills/de
 
 Это создаёт локальную копию для текущего репозитория (на Windows PowerShell команда `mkdir` также доступна).
 
-## Установка в Claude Code
+## Альтернативная ручная установка через Git — Claude Code
 
 Claude Code читает пользовательские навыки из `~/.claude/skills/`.
 

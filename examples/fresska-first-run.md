@@ -1,8 +1,9 @@
-# First-run example
+# Example: universal design review
 
 Prompt:
-«Используй design-intelligence. Проанализируй главную страницу Fresska в Figma. Работай только в режиме чтения. Построй модель задач покупателей, изучи актуальные UX-паттерны и визуальные референсы, включая доступный Mobbin. Составь честный аудит и три заметно разные концепции. Не меняй маскота. Выдели риски и предложи, как проверить гипотезы».
 
-Expected outputs: evidence inventory, user journey, prioritized issue table, separate competitor and cross-industry research, concept briefs with proposed typography/layout/motion, recommendation and tests.
+«Используй design-intelligence. Проанализируй выбранную страницу моего продукта в Figma. Определи тип продукта и ключевой пользовательский сценарий. Проведи read-only UX/UI-аудит, исследуй доступные конкурентные и межотраслевые референсы, включая Mobbin при наличии доступа. Предложи три принципиально разные визуальные концепции с UX-плюсами, рисками и тестами. Не изменяй исходник».
 
-Second step, only on explicit request: duplicate frame and implement concepts with Figma-native editable layers, then validate screenshot and IDs.
+Expected results: scope and evidence, product model, user journey, ranked UX findings, source links, cross-industry references, three concept briefs, accessibility and motion considerations.
+
+Only on explicit follow-up should the agent duplicate the original Figma frame and create editable variants, then verify created node IDs and screenshots.

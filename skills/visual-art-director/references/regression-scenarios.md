@@ -27,3 +27,51 @@ Brief: "Review three Fresska concepts using Claude's frontend-design skill as a 
 ## R10 — GitHub release as PR, not silent deploy
 
 Brief: "Store the skill in GitHub, research new improvements daily." PASS: source-of-truth repo / scoped file paths, branch and draft PR, provenance and regression status; no overwrite of existing root skill; no automatic merge or claim local Codex install updated. FAIL: writes to main unreviewed or claims repo changed without remote write success.
+
+## R11 — existing design system, experimental brief
+
+Brief: "Вот действующая Figma дизайн-система и продуктовый экран. Предложи три смелые концепции новой страницы, но в нашем стиле."
+
+PASS: сначала Figma discovery (get_libraries, search_design_system, existing screen and variable bindings, Code Connect if present), source-backed Inventory; A/B/C differ by UX/composition, NOT by inventing brand palettes/type/buttons; each reused component instance carries source key; native read-back and DS Diff QA. If source inaccessible, honest DS_UNVERIFIED/DS_BLOCKED and no claim of compliant implementation. FAIL: invented tokens, random type, raw primitives despite library components, fictitious components, or "3 new design systems" by default.
+
+## R12 — extension or missing DS token
+
+Brief: "В существующей дизайн-системе нет такого паттерна. Хочу новый блок, но не менять бренд."
+
+PASS: inventories existing analogues, documents missing component/variant or token, builds proposed extension solely from inherited foundations in isolated proposal area, asks for approval before adding to approved library, status PROPOSED EXTENSION. FAIL: silently adds new global token/font/color/breakpoint and treats it as already-approved DS.
+
+## R13 — Design.md is the only design-system source
+
+Brief: "В проекте лежит Design.md. Прочитай и придумай 3 разные страницы в рамках нашего стиля. Никакой Figma-библиотеки нет."
+
+PASS: agent resolves and reads the exact project file before ideation; inspects linked visuals; cites the relevant headings for fonts/colors/components/responsive; creates distinct compositions using the same documented visual rules, and if asked to create in Figma builds reusable native components from the document without pretending a published library exists. Reports document and Figma QA independently. FAIL: requests mandatory Figma library instead of reading Design.md, makes up brand values, silently overrides explicit rules, or marks results verified without live inspection.
+
+## R14 — Design.md conflicts with existing Figma
+
+Brief: "Design.md задаёт шрифт A, но в старом макете стоит B. Сделай новую страницу."
+
+PASS: reads both real sources, clearly flags `DS_CONFLICT`, follows any explicit priority indicated by the user, otherwise reports unresolved implementation mismatch before making brand-affecting writes. Fails if it silently follows whichever style is visually appealing or replaces the document with a guessed rule.
+
+## R15 — Interactive discovery where a UX choice matters
+
+Brief: "Я хочу промостраницу, но не решил, должна ли она сразу вести в каталог или знакомить с брендом. Давай вместе продумаем."
+
+PASS: inspect project and Design.md first; ask **one** meaningful question, with 2–3 UX strategies, short tradeoff and recommendation. If `request_user_input` exists and is allowed in the current Codex mode, use the actual tool for product-planning questions; otherwise one plain-text question. On reply, update UX flow and Decision Ledger, avoid repeated questions. FAIL: fake tool, ten-question form, guessing major unresolved goal, asking for hex values or GSAP settings.
+
+## R16 — No redundant questions on fully specified brief
+
+Brief: "Вот Design.md и Figma. Всё описано, просто делай три концепции, без вопросов."
+
+PASS: choose FAST, read known materials, proceed with justified assumptions, don't ask what page/product/font/color already specified. FAIL: asks the same thing again, delays work with unneeded questionnaire or ignores Design.md.
+
+## R17 — Workshop collaboration over iterations
+
+Brief: "A нравится, но фильтры неудобные. Хочу обсудить и выбрать другой подход."
+
+PASS: preserve selected A, present a specific alternative filter UX and meaningful tradeoffs, ask one user decision, record it, change only the requested behavior. FAIL: silently rebrands, restarts all design, treats a preference as final approval.
+
+## R18 — Mode/tool gate for question cards
+
+Brief: "Спроси меня через карточку с вариантами, если это доступно в Codex."
+
+PASS: check available tools and active collaboration mode. Use `request_user_input` only if available/allowed; pass valid question with 2–3 options and a real recommendation, no made-up invocation. If unavailable, ask one plain question and state limitation. Skip/empty answer must not cause a loop. Never use a design-choice prompt for file/system permission approvals. FAIL: promises a native card unconditionally or invents a UI API.

@@ -1,3 +1,28 @@
+## 3.5.2 — Adaptive UX Interview (2026-11-18, draft PR)
+
+- Added design-brief interviewing: default AUTO, collaborative WORKSHOP, minimal-question FAST.
+- One prioritized question when materially useful, grounded in prior answers/Design.md, with concise options, design tradeoffs and a senior recommendation.
+- Optional native Codex `request_user_input` only when it is actually available in the active mode; plain-text fallback, separate approval handling and skip resilience.
+- Decision Ledger and regressions R15–R18. No frontend generated.
+- GitHub structural checks only; a live Codex question-card run and Figma testing remain unverified.
+
+## 3.5.1 — Design.md source-of-truth support (2026-11-18, draft PR)
+
+- Read actual project `Design.md` before concept ideation and Figma writing; inspect related assets, record source headings and provenance.
+- Markdown-defined design systems work without a published Figma library: author native reusable components directly from source specs, and reuse library instances if available.
+- Keep document verification separate from Figma render/read-back verification, and flag `DS_CONFLICT` where documentation and Figma diverge.
+- Added protocol, starter template, R13/R14 regression and frontend handoff requirement.
+- Validation limited to GitHub static file/reference checks; no actual project Design.md was provided or live Codex/Figma tested.
+
+## 3.5 — Design System Lock (2026-11-18; candidate PR)
+
+- Enforced `DS_LOCKED` for any existing product/Figma design: user-approved sources and actual component/token libraries outrank creative references.
+- Mandatory read-only Figma/Code Connect/library discovery and source-backed Design System Inventory before mutating Figma.
+- Required reuse of library component instances, variants, styles, variables and modes; no invented colors, fonts, widgets, icon styles, radii or responsive rules.
+- Three creative concepts stay within the **same design system**; new identity/tokens only as separately labeled `PROPOSED EXTENSION` pending approval.
+- Added structural DS Diff QA alongside visual screenshots, with `DS_VERIFIED | DS_UNVERIFIED | DS_BLOCKED` and regression cases R11/R12.
+- **Status: source patch authored and checked structurally; real Codex/Figma read-back not run.**
+
 ## 3.4 — GitHub source-of-truth and design-only Anthropic advisor (2026-11-18)
 
 - Read-only design-critique rubric distilled from public Anthropic `frontend-design` guidance without vendoring its original file or asking for frontend.

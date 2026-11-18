@@ -1,0 +1,65 @@
+# Design System — [Project]
+
+> Replace placeholders with approved values. Copy this file to `Design.md` in your **project root**, not inside the shared skill repository.
+
+## Scope and authority
+- Project: [name]
+- Status: approved / draft
+- Owner/revision: [author, YYYY-MM-DD]
+- Applies to: [desktop/mobile/sections]
+- Existing Figma file/library: [optional URL]
+- Design decisions locked: [list]
+- Areas open for exploration: [list]
+
+## Identity
+- Logo: [relative asset path or Figma link]
+- Mascot, if any: [asset & restrictions]
+- Visual tone: [specific language]
+- Do not: [non-negotiable rules]
+
+## Color tokens
+| Token | Light | Dark | Used for |
+|---|---|---|---|
+| color.brand | [hex] | [hex] | primary brand identity |
+| color.bg | [hex] | [hex] | canvas |
+| color.text | [hex] | [hex] | primary text |
+| color.accent | [hex] | [hex] | deliberate accents |
+
+## Typography
+- Type family: [name] / weights [..] / Cyrillic [verified?]
+- Headings: [roles and sizes]
+- Body: [roles and sizes]
+- Allowed alternatives: [if any]
+- Fonts/specimens source: [link]
+
+## Layout and responsive
+- Desktop container: [width]
+- Grid / spacing scale: [defined sizes]
+- Radii / strokes: [defined tokens]
+- Breakpoints and mobile rules: [details]
+
+## Components and states
+- Button: [variants, sizes, hover/focus/disabled/loading, dimensions]
+- Input: [variants, errors, keyboard focus]
+- Product card: [content order, interactions]
+- Search/catalog/filter: [rules]
+- Modal/drawer/navigation: [rules]
+
+## Assets and iconography
+- Icon family and stroke width: [description]
+- Photography, mascot and product-crop style: [description and reference links]
+
+## Motion and accessibility
+- Primary interaction pattern: [rule]
+- Reduced motion: [rule]
+- Touch/keyboard: [rule]
+- Accessibility: [contrast, target sizes, focus]
+
+## Business UX constraints
+- Product browsing and cart: [rules]
+- Checkout and delivery: [approved rules]
+- Never invent: [e.g. prices, offers, delivery promises]
+
+## Approval policy
+- Who approves extensions: [role]
+- How to document proposed exceptions: [format]

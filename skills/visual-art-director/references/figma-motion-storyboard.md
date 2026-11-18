@@ -40,7 +40,7 @@ Do not label a static Figma screenshot as an interactive prototype. Prototype li
 
 `00 / Creative Strategy` (Concept DNA + user task) → `01 / Concepts A-B-C` (comparable thumbnails + desktop continuation) → `02 / Screens` (native desktop/mobile) → `03 / Interaction States` (motion/story frames) → `04 / Design System` (tokens/components) → `05 / Decision Board` (hypotheses, votes, tradeoffs) → `06 / Handoff` (only when selected/approved).
 
-Names are a suggested convention, not fixed tool API instructions. First create genuinely different visual systems; componentize shared UI after art direction is stable.
+Names are a suggested convention, not fixed tool API instructions. **If a design system already exists, reuse its tokens, components and variants from the first draft, not only after art direction.** Three concepts should differ in spatial/media storytelling and user flow without creating three incompatible design systems. Only greenfield/explicit rebranding may propose alternate visual systems.
 
 ## What counts as done in design mode
 

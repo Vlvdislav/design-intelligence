@@ -2,6 +2,8 @@
 
 > Mandatory for promo pages, brand campaigns, editorial landings and experimental storefronts. Read this at brief intake AND before making the first Figma composition. This is an internal art-direction review, not a validated conversion predictor or guarantee of user delight.
 
+**Design-system precedence:** in a current product, every A/B/C must use the same approved palette, typography, UI component variants, iconography and spacing rules. Creative novelty is achieved through editorial staging, image art direction, interaction and compositional architecture **inside** the approved design system. A bolder concept is never a license for silent rebranding. See `design-system-lock.md`.
+
 ## What counts as failure
 
 A visually tidy screen can still be conceptually weak. Reject a draft before showing it if the dominant composition could plausibly be produced for dozens of unrelated brands by swapping the logo and hero image. Typical failure pattern:

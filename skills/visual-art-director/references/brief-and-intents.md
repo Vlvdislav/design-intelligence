@@ -12,7 +12,13 @@
 - **Constraints:** функциональные блоки, существующая система, логотип, разрешённая область изменений, accessibility.
 - **Output:** images only / editable Figma / comparison / critique.
 
-Если запрос «сделай современный дизайн магазина косметики» — достаточно информации для начала концепций: аудитория, устройство, сценарии могут быть приняты как гипотезы с пометкой. Вопрос обязателен только когда неизвестно, нужен ли вообще дизайн изображения или изменение конкретного Figma-файла (если эти выходы одинаково вероятны и последствия существенны).
+Если запрос «сделай современный дизайн магазина косметики» — достаточно информации для начала концепций: аудитория, устройство, сценарии могут быть приняты как гипотезы с пометкой. Вопрос обязателен, если есть реальный блокер (например, неясно, требуется изображение или запись в Figma), или пользователь в WORKSHOP хочет обсудить важные решения. В AUTO можно задать один предметный вопрос о значимой UX-развилке, даже если минимальный бриф понятен; не спрашивай ради формального сбора сведений. См. `adaptive-ux-interview.md`.
+
+## Design system intent — default locked
+
+Существующий продукт, дизайн, Figma-файл, библиотека, бренд-гайд или отобранная ранее концепция автоматически включает `DS_LOCKED`; даже фразы «хочу вау», «экспериментально», «три версии» не разрешают менять утверждённые токены и компоненты. В режиме новой страницы существующего продукта сохраняй system baseline, допускай разные композиции/UX. Предлагай `DS_EXPLORATION` отдельно лишь если пользователь прямо просил новые темы, айдентику или изменения системы. При конфликте требования пользователя с существующим источником фиксируй точную коллизию и запрашивай решение, не угадывай.
+
+Если нет доступа к Figma/библиотеке, не выдавай придуманную палитру и компоненты за фактические. Можно описать идеи в виде `DS_UNVERIFIED`, но полноценная compliant-запись требует реального source inventory.
 
 ## Параметры по умолчанию
 
@@ -37,3 +43,15 @@
 ## Короткий формат для пользователя
 
 Когда требуется показать гипотезы до генерации: максимум 3 строки о подходах, а затем визуальные изображения. Не выдавай многостраничное исследование, когда запрос был «сделай варианты».
+
+## `Design.md` detection
+
+If the existing project's design system is in `Design.md`, find and **read its actual full content** before proposing creative treatments. Follow `design-md-protocol.md`: extract all established tokens and patterns, inspect linked visuals, map components and states, and annotate open gaps. Do not require a published Figma library. An inaccessible expected file is a blocker for claims of design-system compliance, not an excuse to substitute generic components.
+
+## Adaptive interview modes
+
+- `AUTO` (default): use available brief, Design.md, Figma and prior answers; ask one question only if the answer materially changes product UX or creative choice. For reversible details continue with `ASSUMED`.
+- `WORKSHOP`: on user's request to collaborate, discuss at meaningful checkpoints (primary user goal, UX fork, A/B/C selection, revision). One question at a time, with a design recommendation.
+- `FAST`: on "сделай сам / без вопросов", implement design research and concepts without an interview; ask only for necessary missing access, approvals or true blockers.
+- Skip/empty response → keep moving with explicit reasonable assumptions. Never repeat answered questions without a new material conflict.
+- `request_user_input` is optional and mode-dependent; do not promise UI cards. Respect current Codex tools and prompts; permission approvals remain separate.

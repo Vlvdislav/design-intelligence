@@ -1,28 +1,31 @@
-# Design Intelligence — два скилла для Codex
+# Design Intelligence — independent Codex skills
 
-- **[visual-art-director](skills/visual-art-director/SKILL.md)** — новый компактный арт-директор: по короткому брифу создаёт оригинальную концепцию сайта, лендинга или Figma-дизайна; учитывает имеющуюся дизайн-систему и готовит сцены, motion и visual target.
-- **[creative-frontend-engineer](skills/creative-frontend-engineer/SKILL.md)** — отдельно реализует frontend и проверяет его в браузере. Не строит backend.
+**Visual Art Director** is a design-only skill. It turns a short request into finished, detailed Figma screens with original art direction, consistent brand assets, desktop/mobile compositions and motion storyboards. It does **not** build websites or call a frontend engineer.
 
-## Установка (ветка с текущим обновлением)
+**Creative Frontend Engineer** is a separate, opt-in coding skill for requests that explicitly need implementation.
+
+## Install or update (Ubuntu / Codex)
 
 ```bash
 git clone --branch fix/design-system-lock-3-5 https://github.com/Vlvdislav/design-intelligence.git
 cd design-intelligence
 python3 scripts/validate_skill.py
-bash install.sh both
+bash install.sh designer
 ```
 
-Для существующего клона: `git switch fix/design-system-lock-3-5 && git pull --ff-only && bash install.sh both`.
-Установщик архивирует прежний скилл **вне** папки обнаружения. Открой новый сеанс Codex после установки.
+Already cloned? Use `git switch fix/design-system-lock-3-5 && git pull --ff-only && bash install.sh designer`. The installer backs up the previous installed skill outside the skills folder. Start a new Codex session afterward.
 
-## Примеры
+## Try
 
-- `$visual-art-director Сделай необычный storytelling-лендинг для Fresska с маскотом.`
-- `$visual-art-director Предложи три разные концепции главной в Figma.`
-- `$visual-art-director Спроектируй и передай в реализацию промо-сайт технологичного бренда.`
+```text
+$visual-art-director Design one cinematic storytelling page for Fresska
+with our existing mascot. Create editable desktop/mobile screens in Figma.
+Do not implement a site.
+```
 
-В режиме концепций frontend не создаётся. Прямой запрос на готовый сайт разрешает дизайнеру выбрать visual target и передать работу инженеру. Figma и browser QA выполняются только при реально доступных инструментах.
+```text
+$visual-art-director Recreate this supplied visual prompt precisely in Figma,
+including layout, assets, layers and transition storyboard states.
+```
 
-Старые примеры и research в корне репозитория оставлены как архивные материалы; **новый** скилл их автоматически не загружает.
-
-Репозиторий публичный: не добавляй приватные ассеты, токены, клиентские файлы и лицензируемые шрифты.
+The designer chooses one direction by default; request two or three explicitly if needed. It never treats static Figma frames as functioning web animation. Real Figma access and screenshots are required for verified visual work.

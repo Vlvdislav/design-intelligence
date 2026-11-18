@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Static skill structure checks; live visual/Figma/browser QA is separate."""
+"""Static skill structure and design-only contract checks."""
 from pathlib import Path
 import re
 import sys
@@ -36,17 +36,27 @@ for name, paths in required.items():
     for rel in set(re.findall(r"`(references/[a-z0-9-]+\.md)`", content)):
         if not (folder / rel).is_file():
             errors.append(f"broken reference: {name}/{rel}")
-    if f"${name}" not in (folder / "agents/openai.yaml").read_text(encoding="utf-8"):
+    agent = folder / "agents/openai.yaml"
+    if agent.is_file() and f"${name}" not in agent.read_text(encoding="utf-8"):
         errors.append(f"missing invocation: ${name}")
-designer = root / "skills" / "visual-art-director" / "references"
-extras = [p.name for p in designer.iterdir() if p.is_file() and p.name != "creative-mechanics.md"] if designer.is_dir() else []
-if extras:
-    errors.append("legacy designer references still present: " + ", ".join(extras))
+designer_dir = root / "skills" / "visual-art-director"
+skill = (designer_dir / "SKILL.md").read_text(encoding="utf-8")
+agent = (designer_dir / "agents/openai.yaml").read_text(encoding="utf-8")
+for clause in ("DESIGN ONLY", "one finished visual direction", "Exact recreation", "Figma-first", "Do the design"):
+    if clause.lower() not in skill.lower():
+        errors.append(f"missing design-only contract: {clause}")
+if "invoke any frontend engineer" not in agent or "Do not write code" not in agent:
+    errors.append("agent must explicitly refuse automatic frontend delegation")
+refs = designer_dir / "references"
+if refs.is_dir():
+    extra = [p.name for p in refs.iterdir() if p.is_file() and p.name != "creative-mechanics.md"]
+    if extra:
+        errors.append("legacy designer references: " + ", ".join(extra))
 for rel in ("install.sh", "install.ps1", "README.md", "INSTALL.md"):
     if not (root / rel).is_file():
         errors.append(f"missing: {rel}")
 if errors:
     print("FAILED\n" + "\n".join(f"- {e}" for e in errors))
     sys.exit(1)
-print("OK: compact visual-art-director + independent creative-frontend-engineer; refs valid.")
-print("STATIC ONLY: Figma/browser execution not tested.")
+print("OK: design-only Figma director, single-default-concept, precise scene specification, editable/QA contract.")
+print("STATIC ONLY: no live Figma run was performed.")

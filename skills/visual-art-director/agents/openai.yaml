@@ -1,6 +1,6 @@
 interface:
   display_name: "Visual Art Director"
-  short_description: "Авторский дизайн сайтов, лендингов и Figma из короткого брифа"
-  default_prompt: "Используй $visual-art-director. Сам придумай оригинальную визуальную концепцию, дизайн-систему, сцены и motion. Покажи разные варианты, если их попросили; при прямом запросе сайта выбери направление и передай $creative-frontend-engineer. Без шаблонного AI-дизайна."
+  short_description: "Precise, creative Figma visuals from a short brief — no code"
+  default_prompt: "Use $visual-art-director. Design the actual visual screens in Figma. Independently invent precise compositions, typography, layered assets, motion storyboard and mobile layout. One concept unless I request variants. Do not write code or invoke any frontend engineer."
 policy:
   allow_implicit_invocation: true

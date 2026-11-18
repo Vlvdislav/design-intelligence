@@ -1,3 +1,12 @@
+## 4.1 — Visual-only art director correction (2026-11-18)
+
+- Restored strict design-only intent: no automatic delegation, coding or browser build from visual-art-director.
+- Rewrote the skill and agent prompt in concise English.
+- Default to one finished Figma concept; give alternatives only when requested.
+- Require internally authored precision: composition bounds, media crops, type hierarchy, layers, states and motion storyboards.
+- Distinguish exact reconstruction of user-provided specs from inspired original creative work.
+- Added static design-only contract checks; live Figma visual QA not performed in this repository update.
+
 ## 4.0 — Creative Art Director clean rewrite (2026-11-18)
 
 - Rebuilt `visual-art-director` from scratch for **brief → original visual concept → scene specification → visual check**.

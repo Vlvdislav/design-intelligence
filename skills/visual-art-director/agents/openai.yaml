@@ -1,0 +1,6 @@
+interface:
+  display_name: "Visual Art Director — UX/Figma"
+  short_description: "Creative UX/UI арт-дирекшн: авторские концепции, cinematic сцены и motion-storyboard в Figma"
+  default_prompt: "Используй $visual-art-director. Сам придумай три оригинальные арт-направления на основе задачи и референсов, собери coherent imagery, desktop/mobile и интерактивные storyboard-состояния в редактируемой Figma. Никакого frontend, пока пользователь не утвердил дизайн."
+policy:
+  allow_implicit_invocation: true

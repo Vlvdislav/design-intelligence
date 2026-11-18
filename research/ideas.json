@@ -1,0 +1,50 @@
+{
+  "version": "1.0",
+  "updated_at": "2026-11-18",
+  "records": [
+    {
+      "id": "2026-11-17-figma-native-vs-import",
+      "title": "Разделять native Figma и импорт кодовых слоёв",
+      "source_url": "https://help.figma.com/hc/en-us/articles/39252411778583-Figma-MCP-server-FAQs",
+      "source_type": "vendor_docs",
+      "source_date": null,
+      "observed": "Figma описывает use_figma как работу с design system content, а code-to-canvas как flat layers без связи с библиотекой.",
+      "proposal": "Требовать editable native Figma как default; импорт HTML/code — только вспомогательный по отдельному разрешению.",
+      "status": "candidate",
+      "test_scenario": "R07"
+    },
+    {
+      "id": "2026-11-17-codrops-motion-curation",
+      "title": "Motion механика с UX-контрпримером",
+      "source_url": "https://tympanus.net/codrops/hub/",
+      "source_type": "creative_demos",
+      "source_date": null,
+      "observed": "Библиотека creative demos содержит WebGL, 3D, GSAP и разные взаимодействия.",
+      "proposal": "Прежде чем включить effect в концепт, записывать цель, действие пользователя, fallback и риск; visual demo не считать UX evidence.",
+      "status": "candidate",
+      "test_scenario": "R06"
+    },
+    {
+      "id": "2026-11-17-baymard-commerce-baseline",
+      "title": "Commerce UX как проверка эксперимента",
+      "source_url": "https://baymard.com/research-articles/current-state-ecommerce-product-page-ux",
+      "source_type": "ux_research",
+      "source_date": null,
+      "observed": "Исследование отмечает частые проблемы product page UX и необходимость понятного исследования товара.",
+      "proposal": "Проверять, не ухудшает ли 3D/experiment поиск, сравнение, информацию и путь к покупке.",
+      "status": "candidate",
+      "test_scenario": "R05"
+    },
+    {
+      "id": "2026-11-18-anthropic-frontend-design-advisory",
+      "title": "Read-only independent creative critique before Figma approval",
+      "source_url": "https://github.com/anthropics/skills/blob/main/skills/frontend-design/SKILL.md",
+      "source_type": "official_skill_guidance",
+      "source_date": null,
+      "observed": "Anthropic frontend-design skill recommends brand-specific visual direction, purposeful typography, avoiding generic AI layout defaults and iterative critique; code-writing sections are out of scope.",
+      "proposal": "Adopt only a read-only creative review rubric. Distinguish locally applied guidance from a real second opinion by Claude Code. No frontend build.",
+      "status": "candidate",
+      "test_scenario": "R09"
+    }
+  ]
+}

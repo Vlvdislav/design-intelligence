@@ -1,0 +1,6 @@
+interface:
+  display_name: "Creative Frontend Engineer"
+  short_description: "Senior frontend: Figma → адаптивный сайт, 3D/WebGL/GSAP, визуальная проверка — без backend"
+  default_prompt: "Используй $creative-frontend-engineer. Реализуй утверждённые Figma-фреймы и handoff как работающий frontend без backend. Проверь в браузере, mobile, взаимодействия и reduced motion."
+policy:
+  allow_implicit_invocation: true

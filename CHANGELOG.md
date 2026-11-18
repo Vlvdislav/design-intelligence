@@ -1,0 +1,43 @@
+## 3.4 — GitHub source-of-truth and design-only Anthropic advisor (2026-11-18)
+
+- Read-only design-critique rubric distilled from public Anthropic `frontend-design` guidance without vendoring its original file or asking for frontend.
+- Transparent labeling: local design review != real independent Claude review; external second opinion only when tool is genuinely connected.
+- GitHub PR release protocol and safe repo publishing helper that does not overwrite the existing design-intelligence root skill.
+- R09/R10 regression checks; v3.4 source archive. Live Figma / external Claude / GitHub full push tests NOT RUN.
+
+## 3.3 — Living Research & Evidence Gates (2026-11-17)
+
+- Added a research-to-release method: credible sources → candidate rule → counterexample → regression check → approval/release, without pretending LLM weights self-train.
+- Added curated versioned `research/ideas.json` with provenance/status (initial entries are candidates until live regression); daily research prompt and R01–R08 regression bench.
+- Refined Figma-native / Code-to-Canvas capability limits from official Figma sources and sharpened distinction between motion demos and validated commerce UX.
+- Retained strict Figma-first / no frontend code by default, split skills and safe backups outside installed-skills directory.
+- Ran only static checks for package; live Figma/design quality not certified.
+
+## 3.2 — Figma-first cinematic concepts (2026-11-17)
+
+- Reframed motion-site recreation prompts as source **specimens** for art direction, not requests to build coded sites.
+- Added KAIRN/VELL design grammar decoder, hero plate and asset-led art direction, original scene production, Figma motion storyboard, and decision board.
+- Added strict no-frontend-by-default guard: temporary coding only if explicitly requested; engineer skill unchanged.
+- Added examples and regression checks for media-led campaigns, stateful configurators and Fresska mascot-driven marketplace promo.
+- Retained installer compatibility and existing two-skill architecture.
+
+## 3.1 — Concept quality correction / installer doctor
+
+- Added mandatory Concept DNA and creative-quality-gate for promo/landing.
+- Added Fresska mascot anti-kids regression case; stop generic hero + three cards.
+- Added design screenshot critique/re-render and whole-page narrative proof.
+- Fixed installer backups to live outside skills discovery root.
+- Added reversible duplicate-skill doctor script (dry-run by default).
+
+# Changelog
+
+## 3.0 / 2026-11-17
+- Split architecture: UX/design/Figma `visual-art-director` versus frontend-only `creative-frontend-engineer`.
+- Preserved visual-art-director 2.0's scene blueprint, spatial and experimental studies, Figma guidance, typography, assets and QA.
+- Added commerce benchmark, UX flow protocol, hypothesis preference vs usability vs A/B and three-concept diversity gates.
+- Added user selection/explicit approval states and JSON+MD handoff contract.
+- New frontend skill: stack choice, real interactions, 3D/cursor-follow, GSAP, WebGL fallback, reduced motion, visual QA, mock-only commerce.
+- Safe installer for both, validator, realistic prompts, Fresska scoped example.
+
+## From 2.0
+- Concept exploration, local optional motion study, Code to Canvas and Figma-native routes.

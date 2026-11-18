@@ -18,7 +18,7 @@ description: >-
 
 ## Non-negotiables
 
-1. **Gate:** для нового продукта без выбранного визуального ориентира сначала направь к `$visual-art-director` для трёх вариантов; не придумывай дизайн без выбора. Если пользователь явно просит реализовать конкретный Figma/HTML/скриншот, это достаточный target. Если статус handoff `exploring`, не стартуй production build без прямого запроса и зафиксируй override.
+1. **Gate:** если пользователь просит только концепты — сначала `$visual-art-director`, без frontend. Если он явно просит готовый сайт/лендинг, то авторский visual target от `$visual-art-director` + этот запрос достаточны для build без отдельного цикла утверждения; отметь direct-build override, не называй дизайн `approved`. Figma/HTML/скриншот пользователя также достаточный target. Без визуального target не придумывай дизайн вместо арт-директора.
 2. **Fidelity above personal preferences.** Approved visual DNA and UX behavior are source of truth. No silent simplifications to generic SaaS layout. On conflicts, describe issue and choose smallest reversible fallback.
 3. **Real interactions, not nonfunctional eye candy.** Every interactive control must do something meaningful locally: search/filter/sort demo dataset, select variant, open modal, navigate route, show cart mock state, forms validate. If action requires backend, mark `DEMO` and simulate explicitly or leave disabled with explanation. Never claim order/payment/login genuinely works.
 4. **Restraint:** not all sites require Three.js. Choose simplest tech meeting approved scene. CSS for 2.5D, GSAP for orchestration, Three.js/R3F for actual mesh/depth/shaders, Motion for component gestures. Do not add libraries only to impress. Verify license/version from official docs if using current APIs.

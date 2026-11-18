@@ -1,3 +1,11 @@
+## 4.0 — Creative Art Director clean rewrite (2026-11-18)
+
+- Rebuilt `visual-art-director` from scratch for **brief → original visual concept → scene specification → visual check**.
+- Reduced designer skill from dozens of references to one compact creative-mechanics note.
+- Kept Figma concept mode, existing brand systems, mobile/reduced motion and direct-build handoff to independent frontend skill.
+- Simplified structural validator and installation documentation; previous content remains in Git history.
+- Static integrity checked through the repository. Live Figma/browser QA not run.
+
 ## 3.5.2 — Adaptive UX Interview (2026-11-18, draft PR)
 
 - Added design-brief interviewing: default AUTO, collaborative WORKSHOP, minimal-question FAST.

@@ -42,3 +42,11 @@ Daily research feeds candidate improvements, not unattended changes to `main`. U
 ### Security and scope
 
 This repository is **public**. Do not commit GitHub/Figma/API tokens, credentials, proprietary client images, licensed fonts or private assets. Visual quality checks require actual Figma/browser access; static tests alone cannot prove design quality.
+
+## Use a project `Design.md` as the design system
+
+Place your actual `Design.md` in the root of the **project Codex is designing**, or pass its explicit path/URL. The designer reads its full contents and linked visuals before ideation or Figma writes; it creates a traced inventory from the document. A published Figma component library is **optional**, not required. With a library, source components/variants/variables are reused and checked against the document. Without one, native reusable Figma components are authored from the documented rules. If they conflict, the agent reports `DS_CONFLICT` rather than guessing.
+
+[Design.md review protocol](skills/visual-art-director/references/design-md-protocol.md) · [Starter template](examples/Design.md.template)
+
+**Do not put the actual client/private design-system document in this public repository.** Keep it within the authorized project workspace or a private file source. This repo contains only the example template and procedural rules.

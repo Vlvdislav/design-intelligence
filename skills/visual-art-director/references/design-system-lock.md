@@ -2,6 +2,8 @@
 
 **Required** whenever a product has an existing Figma design, component library, user-provided brand rules, tokens, screenshots or an approved direction. This contract overrules generic "creative concept" or "3 novel art directions" instructions in this skill.
 
+**Document-first:** When the user supplies a project `Design.md`, read and review the actual Markdown and referenced resources *before* trying Figma discovery, composing concepts or editing. Follow `design-md-protocol.md`. A real, accessible `Design.md` is sufficient as the normative design-system specification; a published Figma library is an optional implementation source. Do not conflate `DOC_READ` with `FIGMA_MATCH_VERIFIED`.
+
 ## Mode classifier
 
 - `DS_LOCKED` — DEFAULT for any existing product/brand with source materials. Existing approved design system is immutable; explore layout, UX, asset direction, interactions and new page structure inside it.
@@ -15,18 +17,18 @@ When in doubt, choose locked, not exploratory. "Wow", "premium", "spatial", "exp
 ## Source hierarchy
 
 1. User's current explicit constraints and approved decisions, including design-system changes if specifically requested.
-2. Explicit source-of-truth Figma file and selected library: published components/variant sets, variables and modes, text/effect styles.
-3. Approved product screens and verified Code Connect mappings, component documentation, supplied brand assets.
-4. Consistent project conventions and documented tokens (when actual source above is incomplete).
+2. User-designated `Design.md` (actual content, revision and links) plus explicitly approved design-system documentation. If this document is declared authoritative, its rules outrank ambiguous incidental Figma styles.
+3. Actual Figma source file/library: published components/variant sets, variables/modes, text/effect styles, approved screens and Code Connect. A mismatch with an authoritative `Design.md` is `DS_CONFLICT`, not permission for silent correction.
+4. Documented project conventions and separately supplied brand assets (where the authoritative document does not define the point).
 5. External benchmarks, moodboards, MotionSites, Claude/frontend-design critique, generated art assets — INSPIRATION ONLY.
 
 If any of 1–4 conflict, state the conflict precisely rather than silently picking colors or UX; user's explicit direction wins but report any deviation from prior approved rules.
 
 ## Non-negotiable preflight before any product Figma mutation
 
-1. Identify **exact** Figma fileKey, library name/keys, relevant approved page(s)/screen node ID(s) and user-supplied requirements. Do not assume they were loaded merely because the user mentioned Figma.
+1. Search for the **user-designated project `Design.md` first**, read it completely, inspect referenced accessible assets and note exact path/revision/section anchors. If a `Design.md` is explicitly expected but missing, identify the missing file and do not assert compliance. Also identify Figma fileKey/library names **when actually provided or available**; Figma libraries are not mandatory prerequisites when the approved system lives solely in Markdown.
 2. Load official `figma-use` and `figma-generate-design` skills before use_figma writes, and other relevant Figma skills. Follow CURRENT tool schemas. Check tool and edit access.
-3. Check matching Code Connect files when the project has a codebase, then call `get_libraries` and `search_design_system` for the selected library(s) (include a whole-view search and missing named components). Inspect a real existing screen to recover component/variant keys, bound variables, modes, text and effect styles, and asset sources. Never infer values from a screenshot where the source is available.
+3. Build the initial inventory from the exact `Design.md` sections. **If a connected Figma file/library exists**, check Code Connect when relevant; call `get_libraries` / `search_design_system` and inspect existing screens for instances/variants/bindings. Cross-check against the document and report conflicts. If no library exists, **do not block** the creation of new native Figma components from the documented specification; record actual newly created component names and their links when available. Do not infer values from screenshots when the document defines them.
 4. Produce **Design System Inventory**, with evidence not guesses:
 
    | Domain | Capture | Proof |
@@ -41,13 +43,13 @@ If any of 1–4 conflict, state the conflict precisely rather than silently pick
    | Responsive | mobile/tablet state patterns | approved mobile frame IDs |
 
    For each domain mark `VERIFIED / UNVERIFIED / NOT_AVAILABLE`. Include source file link and version/date when available. **Do not synthesize a nonexistent token library.**
-5. Create a component mapping table **before building**: `UI element → matched system component/variant → relevant style/variable → source key/ID → unknowns`. Reuse matching composite/library instances first; do not draw buttons/inputs/cards from primitive rectangles if library counterparts exist.
-6. If an essential source is inaccessible, stop the affected mutating step, state `DS_BLOCKED` and request the specific Figma file/library access. Visual explorations can continue separately but are `DS_UNVERIFIED`.
+5. Create a component mapping table **before building**: `UI element → Design.md section → library component/variant if present (or native component to build) → token/style → unknowns`. Reuse matching library instances when available. With `Design.md` only, build named reusable components and variants according to its specification, rather than one-off primitive copies. Do not invent unspecified brand tokens.
+6. If the explicitly designated `Design.md` is inaccessible, stop the affected brand-dependent write, state `DS_BLOCKED`, and ask for its exact location. **Do not require a Figma library when `Design.md` provides sufficient rules**; only request Figma access if actual target-file editing or library reuse is the requested deliverable and that access is missing. Exploratory work on incomplete rules stays `DS_UNVERIFIED`.
 
 ## Strict behavior while authoring
 
 - No new palette, font family/weight logic, icon family or stroke style, radii, type scale, semantic colors, spacing scale, elevation, breakpoints, logo, mascot stylization or checkout policy without explicit approval.
-- Do not invent system components. Use actual component instances and variants for recurring product UI; bind values to existing variables/styles. In-house icons and user-supplied fonts/illustrations outrank generic substitutes.
+- Do not invent unsupported component specifications. Use actual library instances and variants where present, or build reusable local Figma components consistent with documented `Design.md` rules if no library counterpart exists. Bind documented tokens to Figma variables/styles where feasible; clearly mark the newly established local tokens as derived from documentation, not published library keys. In-house icons and user-supplied fonts/illustrations outrank generic substitutes.
 - An unbound raw value is allowed only when there is **no applicable token**, it is measured from an approved source or a proposed local composition (e.g. hero image crop), and the rationale is documented. Brand controls cannot use unexplained hardcoded values.
 - Do not fix a design system's weaknesses in place. Record them as `PROPOSED EXTENSION`, with problem, alternatives checked, precise new component/token proposal, where it would be used, impact, accessibility, migration risk and approval status. Build proposals away from approved frames.
 - If the request is "three concepts", diversify content architecture, product storytelling, media direction, attention route, and interaction states; **not** the brand foundation.
@@ -71,6 +73,8 @@ Classify every mismatch `P0 = unauthorized brand/system drift`, `P1 = existing c
 ## Proof format in every design-system-aware delivery
 
 - Mode: `DS_LOCKED / DS_EXPLORATION / GREENFIELD`
+- Authoritative `Design.md`: project path/URL, revision or content hash if accessible, exact sections read, linked visual references inspected/missing; `DOC_READ` and `DOC_RULES_VERIFIED` statuses.
+- If Figma used: `FIGMA_MATCH_VERIFIED` only after actual read-back and screenshot; disclose `DS_CONFLICT` where document and Figma disagree.
 - Source: Figma file/library/approved frame links (actual, no fake IDs)
 - Inventory: reused tokens + component/variant source references, and unknowns
 - Variation boundaries: what was deliberately varied versus held invariant

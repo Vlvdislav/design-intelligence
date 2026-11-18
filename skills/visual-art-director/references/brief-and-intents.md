@@ -43,3 +43,7 @@
 ## Короткий формат для пользователя
 
 Когда требуется показать гипотезы до генерации: максимум 3 строки о подходах, а затем визуальные изображения. Не выдавай многостраничное исследование, когда запрос был «сделай варианты».
+
+## `Design.md` detection
+
+If the existing project's design system is in `Design.md`, find and **read its actual full content** before proposing creative treatments. Follow `design-md-protocol.md`: extract all established tokens and patterns, inspect linked visuals, map components and states, and annotate open gaps. Do not require a published Figma library. An inaccessible expected file is a blocker for claims of design-system compliance, not an excuse to substitute generic components.

@@ -1,3 +1,11 @@
+## 3.5.1 — Design.md source-of-truth support (2026-11-18, draft PR)
+
+- Read actual project `Design.md` before concept ideation and Figma writing; inspect related assets, record source headings and provenance.
+- Markdown-defined design systems work without a published Figma library: author native reusable components directly from source specs, and reuse library instances if available.
+- Keep document verification separate from Figma render/read-back verification, and flag `DS_CONFLICT` where documentation and Figma diverge.
+- Added protocol, starter template, R13/R14 regression and frontend handoff requirement.
+- Validation limited to GitHub static file/reference checks; no actual project Design.md was provided or live Codex/Figma tested.
+
 ## 3.5 — Design System Lock (2026-11-18; candidate PR)
 
 - Enforced `DS_LOCKED` for any existing product/Figma design: user-approved sources and actual component/token libraries outrank creative references.

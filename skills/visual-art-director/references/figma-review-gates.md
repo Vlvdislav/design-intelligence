@@ -27,3 +27,7 @@ Capture screenshots of actual Figma frames (if possible); look for clipped text,
 ## Creative acceptance gate for landing / promo
 
 Refer to `creative-quality-gate.md`. Must prove with screenshot: brand-specific hero, original art-directed asset strategy, two or more meaningful sections, mobile reinterpretation, strong focus and CTA, and story that connects the composition to product discovery. Reject a generic 2-minute layout even if it is technically clean, properly componentized and fully editable. No unsupported claims of objective premium quality or conversion.
+
+## Document-only design-system QA
+
+For a `Design.md`-led project, compare actual generated Figma node values and screenshots against specific document sections even if the project has no published Figma library. Require evidence for colors, type, spacing, icons, controls, variants and responsive states; report remaining gaps separately. `DOC_RULES_VERIFIED` is a source-reading status; use `FIGMA_MATCH_VERIFIED` only after live Figma read-back and visual proof. No unsupported claims of compliance from static tests.

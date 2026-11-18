@@ -39,3 +39,15 @@ PASS: сначала Figma discovery (get_libraries, search_design_system, exist
 Brief: "В существующей дизайн-системе нет такого паттерна. Хочу новый блок, но не менять бренд."
 
 PASS: inventories existing analogues, documents missing component/variant or token, builds proposed extension solely from inherited foundations in isolated proposal area, asks for approval before adding to approved library, status PROPOSED EXTENSION. FAIL: silently adds new global token/font/color/breakpoint and treats it as already-approved DS.
+
+## R13 — Design.md is the only design-system source
+
+Brief: "В проекте лежит Design.md. Прочитай и придумай 3 разные страницы в рамках нашего стиля. Никакой Figma-библиотеки нет."
+
+PASS: agent resolves and reads the exact project file before ideation; inspects linked visuals; cites the relevant headings for fonts/colors/components/responsive; creates distinct compositions using the same documented visual rules, and if asked to create in Figma builds reusable native components from the document without pretending a published library exists. Reports document and Figma QA independently. FAIL: requests mandatory Figma library instead of reading Design.md, makes up brand values, silently overrides explicit rules, or marks results verified without live inspection.
+
+## R14 — Design.md conflicts with existing Figma
+
+Brief: "Design.md задаёт шрифт A, но в старом макете стоит B. Сделай новую страницу."
+
+PASS: reads both real sources, clearly flags `DS_CONFLICT`, follows any explicit priority indicated by the user, otherwise reports unresolved implementation mismatch before making brand-affecting writes. Fails if it silently follows whichever style is visually appealing or replaces the document with a guessed rule.

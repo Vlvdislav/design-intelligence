@@ -13,3 +13,5 @@ Canonical JSON template: `references/design-handoff.template.json` inside this i
 - `open_questions`: never disguise unknown feature/business policy as design fact.
 
 Handoff priority: user-approved Figma target > approved interactions/flows > design tokens/assets > notes > illustrative reference websites. If conflicts occur, report them rather than quietly redesigning.
+
+For projects with authoritative `Design.md`, handoff must include its relative path/URL, revision/hash when obtainable, referenced sections for selected tokens/components, any `DS_CONFLICT`, and separate document/Figma verification statuses. The frontend engineer must read the same project `Design.md` before implementing the approved Figma design; a frontend handoff is not permission to redefine tokens.

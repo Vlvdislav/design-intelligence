@@ -126,3 +126,7 @@ Notes / Motion Spec
 - https://developers.figma.com/docs/figma-mcp-server/tools-and-prompts/
 - https://developers.figma.com/docs/figma-mcp-server/create-skills/
 - https://developers.figma.com/docs/figma-mcp-server/rate-limits-access/
+
+## Document-defined design systems (without a published Figma library)
+
+A project `Design.md` can be the authoritative specification for brand typography, colors, spacing, controls and responsive behavior. Follow `design-md-protocol.md` **first**. If a Figma library exists, inspect and reuse it; if it does not, build semantic reusable native Figma components from the specification. Do **not** insist on `get_libraries` results as an unconditional prerequisite when the Figma library does not exist. No arbitrary alternative fonts/brand colors/controls. Check actual created text, component variants, variable bindings and screenshots against the documented values. Report `DOC_READ` independently from `FIGMA_MATCH_VERIFIED`.

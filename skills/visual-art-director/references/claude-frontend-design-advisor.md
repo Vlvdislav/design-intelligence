@@ -51,3 +51,29 @@ review_status: proposed | applied_and_verified | not_implemented
 ## Authority and decision
 
 Suggestions are not directives. Preserve constraints, product truth, the user's existing approvals, accessibility and core UX. Show visual before/after when acting on a suggestion. Never treat two models agreeing as user research. For public marketplace examples, keep discovery, item detail and checkout paths clear; keep editorial experiments optional. No code before deliberate handoff to `$creative-frontend-engineer`.
+
+## Mandatory application evidence / enforcement
+
+A mention of `frontend-design` in a prompt is not proof it was loaded or applied. At review time, explicitly check for an accessible local skill file and read it if present; otherwise consult the official public source when accessible, or use this stored rubric and mark the source unavailable. Never claim a Claude model was queried unless an actual authorized external model invocation completed.
+
+Record for each A/B/C concept:
+
+```yaml
+frontend_design_advisor:
+  source_status: LOCAL | OFFICIAL_PUBLIC | STORED_RUBRIC_ONLY
+  source_read: true # only if actually opened in this run
+  independent_claude_review: false # true only after a real invocation
+  inspected_frames: []
+  brand_specificity: {finding: '', evidence: ''}
+  composition: {finding: '', evidence: ''}
+  typography: {finding: '', evidence: ''}
+  anti_template: {finding: '', evidence: ''}
+  motion_purpose: {finding: '', evidence: ''}
+  mobile_ux: {finding: '', evidence: ''}
+  accessibility: {finding: '', evidence: ''}
+  corrections_applied: []
+  unresolved_issues: []
+  review_status: proposed | applied_and_verified | not_implemented
+```
+
+A visual concept cannot be labeled `VISUALLY VERIFIED` unless the actual preview/frame was inspected and the concrete defects were addressed or recorded. Do not block honest delivery of `NOT VISUALLY VERIFIED` when tool access is missing. This gate never authorizes frontend development.

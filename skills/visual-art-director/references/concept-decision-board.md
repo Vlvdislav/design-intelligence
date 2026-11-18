@@ -19,3 +19,7 @@ Preference vote asks: 'Which visual direction fits the brand and encourages expl
 ### Rejection
 
 Reject a direction if its visual difference from another is merely color/type, it could represent any brand with a logo swap, its signature effect obscures task completion, mobile makes the key action unavailable, or it relies on assets that cannot be sourced/licensed. Revision must change layout/media hierarchy or interaction concept, not sprinkle decorative effects.
+
+### User-guided selection checkpoint
+
+When the user wants to collaborate, the designer asks one focused comparison question after showing actual A/B/C visual proofs and a recommendation: pick an option, combine strengths, or offer a correction. Record the actual answer in the Decision Ledger. A preference is `selected`, not `approved`; implementation still requires explicit authorization. When the user already chose, do not reopen the same decision without cause.

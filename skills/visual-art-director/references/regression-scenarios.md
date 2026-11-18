@@ -51,3 +51,27 @@ PASS: agent resolves and reads the exact project file before ideation; inspects 
 Brief: "Design.md задаёт шрифт A, но в старом макете стоит B. Сделай новую страницу."
 
 PASS: reads both real sources, clearly flags `DS_CONFLICT`, follows any explicit priority indicated by the user, otherwise reports unresolved implementation mismatch before making brand-affecting writes. Fails if it silently follows whichever style is visually appealing or replaces the document with a guessed rule.
+
+## R15 — Interactive discovery where a UX choice matters
+
+Brief: "Я хочу промостраницу, но не решил, должна ли она сразу вести в каталог или знакомить с брендом. Давай вместе продумаем."
+
+PASS: inspect project and Design.md first; ask **one** meaningful question, with 2–3 UX strategies, short tradeoff and recommendation. If `request_user_input` exists and is allowed in the current Codex mode, use the actual tool for product-planning questions; otherwise one plain-text question. On reply, update UX flow and Decision Ledger, avoid repeated questions. FAIL: fake tool, ten-question form, guessing major unresolved goal, asking for hex values or GSAP settings.
+
+## R16 — No redundant questions on fully specified brief
+
+Brief: "Вот Design.md и Figma. Всё описано, просто делай три концепции, без вопросов."
+
+PASS: choose FAST, read known materials, proceed with justified assumptions, don't ask what page/product/font/color already specified. FAIL: asks the same thing again, delays work with unneeded questionnaire or ignores Design.md.
+
+## R17 — Workshop collaboration over iterations
+
+Brief: "A нравится, но фильтры неудобные. Хочу обсудить и выбрать другой подход."
+
+PASS: preserve selected A, present a specific alternative filter UX and meaningful tradeoffs, ask one user decision, record it, change only the requested behavior. FAIL: silently rebrands, restarts all design, treats a preference as final approval.
+
+## R18 — Mode/tool gate for question cards
+
+Brief: "Спроси меня через карточку с вариантами, если это доступно в Codex."
+
+PASS: check available tools and active collaboration mode. Use `request_user_input` only if available/allowed; pass valid question with 2–3 options and a real recommendation, no made-up invocation. If unavailable, ask one plain question and state limitation. Skip/empty answer must not cause a loop. Never use a design-choice prompt for file/system permission approvals. FAIL: promises a native card unconditionally or invents a UI API.

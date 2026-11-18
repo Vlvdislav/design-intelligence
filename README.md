@@ -50,3 +50,9 @@ Place your actual `Design.md` in the root of the **project Codex is designing**,
 [Design.md review protocol](skills/visual-art-director/references/design-md-protocol.md) · [Starter template](examples/Design.md.template)
 
 **Do not put the actual client/private design-system document in this public repository.** Keep it within the authorized project workspace or a private file source. This repo contains only the example template and procedural rules.
+
+## Design interview / intelligent questions (v3.5.2)
+
+The designer can ask one meaningful UX question after inspecting `Design.md`, Figma and prior user choices. Defaults: `AUTO` (selective questions), `WORKSHOP` (collaborative checkpoints) and `FAST` (minimal questions). Each question should present a professional recommendation without making users specify CSS/animation or other implementation details. It records decisions for later refinements.
+
+The official Codex `request_user_input` tool supports interactive questions **only when the current collaboration mode and tool availability permit**. The skill cannot expose the tool by itself. When unavailable, it uses a concise plain-text question. Approval prompts are a separate mechanism. See [adaptive UX interview protocol](skills/visual-art-director/references/adaptive-ux-interview.md).

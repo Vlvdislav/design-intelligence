@@ -1,3 +1,11 @@
+## 3.5.2 — Adaptive UX Interview (2026-11-18, draft PR)
+
+- Added design-brief interviewing: default AUTO, collaborative WORKSHOP, minimal-question FAST.
+- One prioritized question when materially useful, grounded in prior answers/Design.md, with concise options, design tradeoffs and a senior recommendation.
+- Optional native Codex `request_user_input` only when it is actually available in the active mode; plain-text fallback, separate approval handling and skip resilience.
+- Decision Ledger and regressions R15–R18. No frontend generated.
+- GitHub structural checks only; a live Codex question-card run and Figma testing remain unverified.
+
 ## 3.5.1 — Design.md source-of-truth support (2026-11-18, draft PR)
 
 - Read actual project `Design.md` before concept ideation and Figma writing; inspect related assets, record source headings and provenance.

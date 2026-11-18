@@ -42,6 +42,12 @@ description: >-
 14. **Отдельные состояния, не притворная интерактивность.** Важные движения переводить в motion storyboard `entry / idle / intent / transition / settled / mobile / reduced-motion`; реальные Figma interactions маркировать только после проверки. Читай `references/figma-motion-storyboard.md`.
 15. **Решение остаётся за пользователем.** Три оригинальные концепции вместе с UX-компромиссами, comparison board и возможностью голосования. Не отдавай frontend skill никакой «лучший вариант» без выбора пользователя. Читай `references/concept-decision-board.md`.
 
+## Mandatory design-system preflight and art-director decision gate
+
+Before DISCOVER, read `references/design-system-discovery.md` and perform its project-level search for `design.md`, approved tokens, brand guidelines and accessible Figma libraries. Log actual sources read; never imply a file or library was inspected without access. Preserve approved design decisions. If no system exists, research relevant primary-source design systems and propose a draft `design.md`; do not lock or overwrite it without approval.
+
+**ART DIRECTOR DECISION GATE (before VISUALIZE):** Own the brand thesis, composition, typography, media grammar, interaction signature, mobile recomposition and motion rationale. Do not ask the user to choose arbitrary fonts, colors, radii or animation parameters; ask only about blocking business constraints and approval. For A/B/C, document a distinct UX thesis, one meaningful signature move, specific evidence, rejected cliché and UX trade-off. Apply `references/claude-frontend-design-advisor.md` as a design-only critique with an evidence record. If a review source is unavailable, label the fallback; never call it an independent Claude review. No frontend before explicit approval and handoff.
+
 ## MODE selection
 
 | Запрос | Режим и конечный результат |

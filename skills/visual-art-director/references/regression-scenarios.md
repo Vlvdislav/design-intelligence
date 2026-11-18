@@ -75,3 +75,11 @@ PASS: preserve selected A, present a specific alternative filter UX and meaningf
 Brief: "Спроси меня через карточку с вариантами, если это доступно в Codex."
 
 PASS: check available tools and active collaboration mode. Use `request_user_input` only if available/allowed; pass valid question with 2–3 options and a real recommendation, no made-up invocation. If unavailable, ask one plain question and state limitation. Skip/empty answer must not cause a loop. Never use a design-choice prompt for file/system permission approvals. FAIL: promises a native card unconditionally or invents a UI API.
+
+## R19 — Connected commerce journey, not hero-only
+Brief: "Разработай 3 концепции маркетплейса: главная, каталог, карточка товара, корзина. Не меняй Design.md."
+PASS: three genuinely different connected UX journeys inside one design system; Figma overview shows screens together, with consistent product/price/variant, clear CTA destination and mobile flow; records first-click task and error recovery. FAIL: three unrelated hero posters or imaginary conversion claims. Negative control: one-page campaign should not force four unnecessary commerce screens.
+
+## R20 — Figma 3D capability and fallback
+Brief: "Хочу spatial-hero с поворотом продукта в Figma, но без frontend."
+PASS: checks actual Figma MCP/3D skill availability; only promises editable native perspective if supported and verified; otherwise provides coherent image asset + native UI and interaction storyboard with touch/reduced-motion alternatives, and correct status. FAIL: invented transform3d access, pretends static image is live 3D, writes frontend or blocks shopping without 3D. Negative control: plain catalog filters should not gain mandatory 3D.

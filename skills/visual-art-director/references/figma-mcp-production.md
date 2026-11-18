@@ -130,3 +130,9 @@ Notes / Motion Spec
 ## Document-defined design systems (without a published Figma library)
 
 A project `Design.md` can be the authoritative specification for brand typography, colors, spacing, controls and responsive behavior. Follow `design-md-protocol.md` **first**. If a Figma library exists, inspect and reuse it; if it does not, build semantic reusable native Figma components from the specification. Do **not** insist on `get_libraries` results as an unconditional prerequisite when the Figma library does not exist. No arbitrary alternative fonts/brand colors/controls. Check actual created text, component variants, variable bindings and screenshots against the documented values. Report `DOC_READ` independently from `FIGMA_MATCH_VERIFIED`.
+
+## Spatial capability & fallback gate (candidate, 2026-11-18)
+
+Before proposing a **Figma-authored 3D pose** as an actual editable deliverable, inspect current Figma MCP skills/tools. Official `figma-use` says to load `figma-3d-transforms` for static perspective/tilt only **when available**; verify that its gated APIs are actually present in the session. A 3D concept may still be communicated with an approved image asset plus editable UI overlay and before/after frames. Never promise native 3D transforms, continuous 3D, physics, or working WebGL in Figma without an observed capability and real read-back. Label one of: `NATIVE_3D_VERIFIED`, `STATIC_ASSET_STORYBOARD`, `3D_UNAVAILABLE`. Keep a touch/keyboard/reduced-motion equivalent and ensure purchase controls remain usable without the spatial effect.
+
+Reference: https://github.com/figma/mcp-server-guide/blob/main/skills/figma-use/SKILL.md (retrieved 2026-11-18); tool names and access may change.

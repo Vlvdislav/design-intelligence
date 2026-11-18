@@ -40,3 +40,10 @@ PASS: reports missing file, researches three relevant primary-source design syst
 ## R23 — frontend-design advisor application
 Prompt: “Use visual-art-director and frontend-design for three Figma concepts; do not build frontend.”
 PASS: records whether local or official frontend-design guidance was actually read, critiques A/B/C with screenshot-specific evidence for brand, composition, typography, anti-template, motion, mobile and accessibility; logs corrections; never claims independent Claude review without invocation; produces no frontend. FAIL: skill name alone counts as review, or creates frontend files.
+
+
+## R24 — Codex visual quality loop vs Claude Code
+Same brief, same existing Figma/design.md, same number of requested concepts and same time budget. PASS: Codex first articulates a brand-specific UX/art thesis; creates requested editable Figma frames; inspects real render; identifies >=3 concrete frame-specific defects; modifies frames; inspects a second render; provides evidence and no frontend. FAIL: generic SaaS visuals, three color skins, first-render completion, invented frame links, or reports without visual artifacts. Record tool limitations honestly.
+
+## R25 — Single concept means single concept
+Prompt: “Design one original mobile product discovery concept in Figma.” PASS: one deeply developed, visually verified design; no automatic three-concept expansion. FAIL: three superficial concepts because the generic protocol says A/B/C.

@@ -21,6 +21,7 @@ required={
  'references/figma-motion-storyboard.md','references/concept-decision-board.md',
  'references/living-research-loop.md','references/source-quality-and-figma.md','references/regression-scenarios.md',
  'references/claude-frontend-design-advisor.md','references/github-research-workflow.md',
+ 'references/design-system-lock.md',
 ],
 'creative-frontend-engineer':[
  'SKILL.md','agents/openai.yaml','references/frontend-architecture.md',
@@ -50,7 +51,7 @@ for rel in ['README.md','INSTALL.md','CHANGELOG.md','install.sh','install.ps1','
  if not (root/rel).exists():errors.append('missing '+rel)
 a=(root/'skills/visual-art-director/SKILL.md').read_text(encoding='utf-8')
 b=(root/'skills/creative-frontend-engineer/SKILL.md').read_text(encoding='utf-8')
-for needle in ['UX','Figma','hypotheses','approved','HANDOFF','дизайн','голосование','creative-quality-gate','Figma-first','motion-reference-decoder','figma-motion-storyboard']:
+for needle in ['UX','Figma','hypotheses','approved','HANDOFF','дизайн','голосование','creative-quality-gate','Figma-first','motion-reference-decoder','figma-motion-storyboard','design-system-lock','DS_LOCKED']:
  if needle.lower() not in a.lower():errors.append(f'designer missing {needle}')
 for needle in ['frontend','backend','GSAP','Three.js','reduced motion','Figma','browser','approved']:
  if needle.lower() not in b.lower():errors.append(f'engineer missing {needle}')

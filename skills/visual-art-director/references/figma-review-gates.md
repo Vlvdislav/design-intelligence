@@ -2,7 +2,7 @@
 
 ## Before write
 
-Inspect current document and tokens if accessible. Read current official Figma skills: `figma-use`, `figma-generate-design`; `figma-create-new-file` for new file. For standalone components also relevant Figma library skill. Confirm permissions and actual tools. Create an isolated page/section for new concepts. No destructive changes to approved frames.
+**HARD GATE: прочти `design-system-lock.md`, составь source-backed DS Inventory и карту компонентов/токенов; без неё не начинай mutating writes в утверждённую продуктовую страницу.** Inspect current document and tokens if accessible. Read current official Figma skills: `figma-use`, `figma-generate-design`; `figma-create-new-file` for new file. For standalone components also relevant Figma library skill. Confirm permissions and actual tools. Create an isolated page/section for new concepts. No destructive changes to approved frames.
 
 ## Concept delivery
 
@@ -14,6 +14,10 @@ Inspect current document and tokens if accessible. Read current official Figma s
 ## Approval and promotion
 
 Concept boards are EXPLORING. User chooses B → SELECTED. Incorporate feedback. Only explicit confirmation → APPROVED. Record frame IDs, version and asset list in handoff. Reusing editorial mood is not permission to overwrite old design.
+
+## Design-system compliance verification
+
+Обязательна отдельная проверка: для системных buttons/inputs/tabs/cards — main component/variant key; для текста — fontName и text style; для цветов/отступов/радиусов — связанные variables или одобренные значения; для иконок — та же библиотека и толщина линий; для responsive — действующие constraints. Сопоставляй с конкретным source frame и source token, не с интуицией. Любое отклонение = `DS_DIFF`, исправить или вынести на approval как `PROPOSED EXTENSION`. Статус `DS_VERIFIED` допустим только после фактического Figma read-back.
 
 ## Visual verification
 

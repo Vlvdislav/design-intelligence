@@ -25,15 +25,22 @@
 | `html_to_figma` | Слои из HTML без запуска UI | Статические web compositions | Динамические состояния надо разложить |
 | `send_code_to_figma` | Code layer / Figma Make | Когда прямо нужен код в Figma | **Не** эквивалент design layers |
 
-Для сложного интерфейса допускается **hybrid**: rendered spatial stage →
-Code to Canvas → нативная доработка `use_figma` (navigation, product panel,
-typography, variants, variables).
+Для сложного интерфейса допускается **hybrid**, если он явно разрешён пользователем; для системного UI конечный deliverable всё равно собирается нативными экземплярами существующих компонентов и системными variables/styles. Code to Canvas — визуальный ориентир, но не разрешение заменить библиотеку плоскими слоями. В режиме `DS_LOCKED` приоритет у `use_figma` native.
 
-## Сначала проверь исходную дизайн-систему
+## Сначала проверь исходную дизайн-систему (HARD GATE)
 
-Если работаешь с существующим файлом, инспектируй: компоненты, styles,
-variables, mode, grid, размеры, fontName, брендинг. Не выдумывай «наш цвет».
-Сохрани исходные страницы, если не запрошено прямое редактирование.
+**Выполни `references/design-system-lock.md` до первого mutating Figma call.** Увидеть цвета на скриншоте недостаточно: найди источник истины и собери Design System Inventory с IDs/keys, компонентами, variants, modes, переменными и styles.
+
+В актуальном Figma MCP workflow:
+1. Если доступен source code — найди релевантный Code Connect для требуемых UI-компонентов.
+2. Вызови `get_libraries`, выбери явно указанные пользователем библиотеки. Затем `search_design_system` с областью selected library; проверь whole-view composite.
+3. Одним read-only inspection существующего утверждённого фрейма собери instances/variants, bindings/styles, spacing/layout, fontName, icon grammar, responsive.
+4. Для каждого будущего UI-блока сформируй `Element → Library component/variant → Token/style → Source reference`; в итоговом дизайне создай **instances**, а не похожие самодельные кнопки/поля. Variables/styles связывай с токенами, не хардкодь цвета или радиусы при наличии системных значений.
+5. Если библиотека/права/источник недоступны, объяви `DS_BLOCKED` или `DS_UNVERIFIED`. Не заменяй отсутствующие факты на догадки. Не затрагивай утверждённые экраны.
+
+**Запрещено:** в существующем бренде самовольно вводить другие цвета, новые семантические tokens, шрифты, компоненты, варианты форм, толщину иконок, радиусы или брейкпоинты только потому, что новая концепция кажется эстетичнее. Нововведения — отдельный `PROPOSED EXTENSION`, не часть утверждённого design baseline. Если компонента нет, ищи близкий шаблон; если действительно нет — сообщи gap и предложи extension, но не скрывай факт.
+
+После записи проверь итоговые узлы (instance keys, bindings, fonts, icons) и screenshot against source. До подтверждения source-backed evidence не маркируй дизайн `DS_VERIFIED`.
 
 ## Native Figma Rules
 

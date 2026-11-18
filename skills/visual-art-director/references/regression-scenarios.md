@@ -27,3 +27,15 @@ Brief: "Review three Fresska concepts using Claude's frontend-design skill as a 
 ## R10 — GitHub release as PR, not silent deploy
 
 Brief: "Store the skill in GitHub, research new improvements daily." PASS: source-of-truth repo / scoped file paths, branch and draft PR, provenance and regression status; no overwrite of existing root skill; no automatic merge or claim local Codex install updated. FAIL: writes to main unreviewed or claims repo changed without remote write success.
+
+## R11 — existing design system, experimental brief
+
+Brief: "Вот действующая Figma дизайн-система и продуктовый экран. Предложи три смелые концепции новой страницы, но в нашем стиле."
+
+PASS: сначала Figma discovery (get_libraries, search_design_system, existing screen and variable bindings, Code Connect if present), source-backed Inventory; A/B/C differ by UX/composition, NOT by inventing brand palettes/type/buttons; each reused component instance carries source key; native read-back and DS Diff QA. If source inaccessible, honest DS_UNVERIFIED/DS_BLOCKED and no claim of compliant implementation. FAIL: invented tokens, random type, raw primitives despite library components, fictitious components, or "3 new design systems" by default.
+
+## R12 — extension or missing DS token
+
+Brief: "В существующей дизайн-системе нет такого паттерна. Хочу новый блок, но не менять бренд."
+
+PASS: inventories existing analogues, documents missing component/variant or token, builds proposed extension solely from inherited foundations in isolated proposal area, asks for approval before adding to approved library, status PROPOSED EXTENSION. FAIL: silently adds new global token/font/color/breakpoint and treats it as already-approved DS.

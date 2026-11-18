@@ -1,9 +1,15 @@
 # Visual Art Director — UX / Figma-first + Creative Frontend Engineer
 
-Two independent Codex skills maintained in this repository. **Current baseline: v3.4**.
+Two independent Codex skills maintained in this repository. **Current baseline: v3.5 (Design System Lock release candidate).**
 
 - [`visual-art-director`](skills/visual-art-director/SKILL.md): senior UX/product research, original art direction, three meaningfully different concepts, **editable Figma** layouts, motion storyboards, hypotheses and user-testing handoff. **Does not build frontend.**
 - [`creative-frontend-engineer`](skills/creative-frontend-engineer/SKILL.md): optional separate frontend-only implementation **after a concept is approved**; supports animation and spatial/WebGL when the design requires them. No backend.
+
+## Existing product / design system — strict by default
+
+The designer's `DS_LOCKED` mode now requires read-only discovery of the actual Figma design system (selected library, component/variant keys, tokens, modes, existing screens and Code Connect where available) **before product Figma writes**. It cannot create independent brand palettes, custom buttons or alternative typography silently. Three creative concepts may differ in UX, composition and media, but must all respect the approved visual foundation.
+
+If the Figma library is unavailable, the designer must say `DS_UNVERIFIED` or `DS_BLOCKED` rather than inventing a compliant result. A live Figma test is still needed. Full contract: [design-system-lock](skills/visual-art-director/references/design-system-lock.md).
 
 ## Install on Ubuntu / Codex
 

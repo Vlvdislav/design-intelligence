@@ -1,3 +1,11 @@
+## 4.2 — Reference-first / design-system fidelity (2026-11-18)
+
+- Replaced open-ended concept invention with strict, evidence-led reference reconstruction.
+- Added screenshot / Motion Sites / Figma / Design.md source mapping and design-system extraction: grid, geometry, type, colors, imagery, layers, responsive and motion.
+- Exact vs Adapt vs Design-System modes; no arbitrary storytelling, invented assortment or visual rebranding.
+- Kept visual-art-director Figma-only; separate creative-frontend-engineer unaffected.
+- Strengthened static validation; actual Figma visual fidelity not tested here.
+
 ## 4.1 — Visual-only art director correction (2026-11-18)
 
 - Restored strict design-only intent: no automatic delegation, coding or browser build from visual-art-director.

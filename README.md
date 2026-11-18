@@ -1,10 +1,12 @@
-# Design Intelligence — independent Codex skills
+# Visual Art Director — Reference First
 
-**Visual Art Director** is a design-only skill. It turns a short request into finished, detailed Figma screens with original art direction, consistent brand assets, desktop/mobile compositions and motion storyboards. It does **not** build websites or call a frontend engineer.
+The `$visual-art-director` skill is a **Figma-only reference reconstruction specialist**. Give it screenshots, moodboards, Motion Sites prompts, existing Figma screens or a project `Design.md`. It extracts the visible design system and reproduces the specified composition, grids, typography, assets and states as editable Figma frames.
 
-**Creative Frontend Engineer** is a separate, opt-in coding skill for requests that explicitly need implementation.
+Unlike an open-ended creative generator, it **must not invent a new art direction or brand narrative**. For Fresska, it preserves the multi-category marketplace identity and the supplied mascot instead of inventing a niche lifestyle shop. If there is no usable reference, it asks for one.
 
-## Install or update (Ubuntu / Codex)
+`$creative-frontend-engineer` remains a completely separate optional skill; the visual designer does not invoke it.
+
+## Ubuntu / Codex
 
 ```bash
 git clone --branch fix/design-system-lock-3-5 https://github.com/Vlvdislav/design-intelligence.git
@@ -13,19 +15,16 @@ python3 scripts/validate_skill.py
 bash install.sh designer
 ```
 
-Already cloned? Use `git switch fix/design-system-lock-3-5 && git pull --ff-only && bash install.sh designer`. The installer backs up the previous installed skill outside the skills folder. Start a new Codex session afterward.
+Already cloned? Run `git switch fix/design-system-lock-3-5 && git pull --ff-only && bash install.sh designer`. The installer archives the prior installed skill; restart Codex afterward.
 
-## Try
-
-```text
-$visual-art-director Design one cinematic storytelling page for Fresska
-with our existing mascot. Create editable desktop/mobile screens in Figma.
-Do not implement a site.
-```
+## Example request
 
 ```text
-$visual-art-director Recreate this supplied visual prompt precisely in Figma,
-including layout, assets, layers and transition storyboard states.
+$visual-art-director
+Make a 4-screen Fresska promo in Figma using my screenshots.
+Screenshot A = grid and page rhythm; B = typography; C = motion and
+layering. Keep Fresska's logo, mascot, products and existing design
+system. Reproduce the references closely, do not invent another style.
 ```
 
-The designer chooses one direction by default; request two or three explicitly if needed. It never treats static Figma frames as functioning web animation. Real Figma access and screenshots are required for verified visual work.
+Static validation checks the package, not the visual outcome. Live Figma access and actual screenshot comparison are required for visual verification.

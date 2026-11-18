@@ -1,6 +1,6 @@
 interface:
-  display_name: "Visual Art Director"
-  short_description: "Precise, creative Figma visuals from a short brief — no code"
-  default_prompt: "Use $visual-art-director. Design the actual visual screens in Figma. Independently invent precise compositions, typography, layered assets, motion storyboard and mobile layout. One concept unless I request variants. Do not write code or invoke any frontend engineer."
+  display_name: "Visual Art Director — Reference First"
+  short_description: "Faithful screenshot + design-system reconstruction in editable Figma"
+  default_prompt: "Use $visual-art-director in reference-first mode. Inspect every supplied reference and the existing design system, extract its grid, typography, colors, imagery, layers and interaction states, then reproduce them faithfully as editable Figma frames. No new concepts, invented brand stories, frontend code or engineer handoff."
 policy:
   allow_implicit_invocation: true

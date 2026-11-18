@@ -23,3 +23,9 @@ Reject a direction if its visual difference from another is merely color/type, i
 ### User-guided selection checkpoint
 
 When the user wants to collaborate, the designer asks one focused comparison question after showing actual A/B/C visual proofs and a recommendation: pick an option, combine strengths, or offer a correction. Record the actual answer in the Decision Ledger. A preference is `selected`, not `approved`; implementation still requires explicit authorization. When the user already chose, do not reopen the same decision without cause.
+
+## Store-wide continuity proof (candidate, 2026-11-18)
+
+For a **multi-page commerce task**, compare A/B/C as *connected journeys*, not three isolated heroes. Based on Shopify Canvas (2026-10-01), use a Figma page-wide overview: at minimum home/discovery → listing/category → PDP/selection → cart/checkout entry; keep any unsupported downstream stages as annotated wireflows, not invented product behavior. A one-page campaign is exempt: show hero → proof → conversion continuation instead.
+
+For each concept annotate: (1) primary action and destination, (2) same item/price/variant across screens, (3) where the shopper can recover from wrong navigation, (4) how desktop/mobile composition changes, (5) a testable first-click task. Do not infer conversion improvements from the reference or equate Figma static frames with Shopify's live Canvas.

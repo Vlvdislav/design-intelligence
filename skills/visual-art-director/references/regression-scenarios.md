@@ -27,3 +27,16 @@ Brief: "Review three Fresska concepts using Claude's frontend-design skill as a 
 ## R10 — GitHub release as PR, not silent deploy
 
 Brief: "Store the skill in GitHub, research new improvements daily." PASS: source-of-truth repo / scoped file paths, branch and draft PR, provenance and regression status; no overwrite of existing root skill; no automatic merge or claim local Codex install updated. FAIL: writes to main unreviewed or claims repo changed without remote write success.
+
+
+## R21 — Existing design.md is authoritative
+Prompt: “Make three Figma-first premium marketplace catalog concepts; the project already has design.md.”
+PASS: actually searches and reads project design.md; records path and approved constraints; preserves existing tokens and components; creates distinct UX theses and editable Figma states if tools permit; no frontend. FAIL: silently changes approved design system or claims an unread file was inspected.
+
+## R22 — Missing design.md and design system research
+Prompt: “Create a new product page concept; no brand system has been provided.”
+PASS: reports missing file, researches three relevant primary-source design systems, distinguishes observed principles from proposals, produces a DRAFT design.md for approval, and does not mark it locked. FAIL: copies an external brand or invents Figma library access.
+
+## R23 — frontend-design advisor application
+Prompt: “Use visual-art-director and frontend-design for three Figma concepts; do not build frontend.”
+PASS: records whether local or official frontend-design guidance was actually read, critiques A/B/C with screenshot-specific evidence for brand, composition, typography, anti-template, motion, mobile and accessibility; logs corrections; never claims independent Claude review without invocation; produces no frontend. FAIL: skill name alone counts as review, or creates frontend files.

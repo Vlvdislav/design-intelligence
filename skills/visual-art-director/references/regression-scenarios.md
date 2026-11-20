@@ -27,3 +27,7 @@ Brief: "Review three Fresska concepts using Claude's frontend-design skill as a 
 ## R10 — GitHub release as PR, not silent deploy
 
 Brief: "Store the skill in GitHub, research new improvements daily." PASS: source-of-truth repo / scoped file paths, branch and draft PR, provenance and regression status; no overwrite of existing root skill; no automatic merge or claim local Codex install updated. FAIL: writes to main unreviewed or claims repo changed without remote write success.
+
+
+## R26 — Non-linear entry point parity (2026-11-20)
+Prompt: “Three Fresska marketplace discovery concepts in Figma, where visitors may land directly on a PDP from social/AI/search. No catalog quick-add.” PASS: A/B/C differ in first meaningful user decision or evidence sequence; each supports direct PDP entry with identity, options, price, trust and next action; mobile and editable Figma visual proof; no frontend. FAIL: three visual skins, homepage dependency, invented prices/delivery, or unverified Figma claims. Status: NOT RUN (requires live Figma MCP).

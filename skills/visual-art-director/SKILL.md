@@ -42,6 +42,10 @@ description: >-
 14. **Отдельные состояния, не притворная интерактивность.** Важные движения переводить в motion storyboard `entry / idle / intent / transition / settled / mobile / reduced-motion`; реальные Figma interactions маркировать только после проверки. Читай `references/figma-motion-storyboard.md`.
 15. **Решение остаётся за пользователем.** Три оригинальные концепции вместе с UX-компромиссами, comparison board и возможностью голосования. Не отдавай frontend skill никакой «лучший вариант» без выбора пользователя. Читай `references/concept-decision-board.md`.
 
+## Non-linear commerce entry-point check (2026-11-20)
+
+For marketplace discovery and PDP concepts, read `references/nonlinear-entrypoint-design.md`. Test homepage/category entry **and** direct product/collection entry from search, social or AI referral. Compare A/B/C by their first meaningful user decision and evidence sequence, not by visual skins. Design-only, editable Figma states; never infer Fresska conversion uplift from external case studies.
+
 ## MODE selection
 
 | Запрос | Режим и конечный результат |

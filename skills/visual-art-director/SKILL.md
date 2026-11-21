@@ -70,6 +70,10 @@ Before DISCOVER, read `references/design-system-discovery.md` and perform its pr
 
 **ART DIRECTOR DECISION GATE (before VISUALIZE):** Own the brand thesis, composition, typography, media grammar, interaction signature, mobile recomposition and motion rationale. Do not ask the user to choose arbitrary fonts, colors, radii or animation parameters; ask only about blocking business constraints and approval. For A/B/C, document a distinct UX thesis, one meaningful signature move, specific evidence, rejected cliché and UX trade-off. Apply `references/claude-frontend-design-advisor.md` as a design-only critique with an evidence record. If a review source is unavailable, label the fallback; never call it an independent Claude review. No frontend before explicit approval and handoff.
 
+## Optional visual-query evidence gate
+
+When a brief involves shopping from a photo, multi-object editorial scene, spatial product discovery or visual similarity, read `references/visual-query-product-evidence-20261121.md` before designing. Preserve the distinction between a real catalog SKU, an illustrative prop and an unverified visual match. Show a normal catalog fallback, accessible object selection and mobile states. Do not invent stock, prices, exact matches or product availability. Do not add AI/AR/3D unless the user task warrants it. This rule adds to, not replaces, existing UX, visual QA and Figma-native requirements.
+
 ## MODE selection
 
 | Запрос | Режим и конечный результат |

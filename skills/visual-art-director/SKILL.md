@@ -42,6 +42,10 @@ description: >-
 14. **Отдельные состояния, не притворная интерактивность.** Важные движения переводить в motion storyboard `entry / idle / intent / transition / settled / mobile / reduced-motion`; реальные Figma interactions маркировать только после проверки. Читай `references/figma-motion-storyboard.md`.
 15. **Решение остаётся за пользователем.** Три оригинальные концепции вместе с UX-компромиссами, comparison board и возможностью голосования. Не отдавай frontend skill никакой «лучший вариант» без выбора пользователя. Читай `references/concept-decision-board.md`.
 
+## Cross-page concept coherence (conditional)
+
+For multi-screen marketplace, e-commerce or storytelling concepts, read `references/cross-page-design-contract-20261122.md`. Before editing Figma, define a compact concept-specific design contract; after visualizing, review the requested pages together at equal zoom, correct a verified cross-page inconsistency and recheck the affected frames. Preserve approved design tokens and avoid inventing extra screens. This is a design-only gate; do not create frontend or claim Figma edits without actual MCP evidence.
+
 ## MODE selection
 
 | Запрос | Режим и конечный результат |
